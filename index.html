@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cozy Bean Cafe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Top Navbar -->
+    <header class="navbar">
+        <div class="logo-box">
+            <div class="logo-circle">
+                <span class="logo-top">THE COZY BEAN</span>
+                <i class="fa-solid fa-mug-hot coffee-icon"></i>
+                <span class="logo-bottom">CAFE</span>
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#" class="active">HOME</a>
+            <a href="#menu">MENU</a>
+            <a href="#locations">LOCATIONS</a>
+            <a href="#story">OUR STORY</a>
+            <button class="btn-gold" onclick="openCart()">ORDER ONLINE</button>
+            <div class="cart-icon" onclick="openCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <div class="user-profile">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>Sarah J.</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Category & Search Bar -->
+    <div class="sub-bar">
+        <div class="categories">
+            <span>Menu Categories:</span>
+            <button class="cat-btn active" onclick="filterMenu('all')">All</button>
+            <button class="cat-btn" onclick="filterMenu('coffee')">Coffee</button>
+            <button class="cat-btn" onclick="filterMenu('pastries')">Pastries</button>
+            <button class="cat-btn" onclick="filterMenu('lunch')">Lunch</button>
+            <button class="cat-btn" onclick="filterMenu('drinks')">Drinks</button>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search Menu..." onkeyup="searchMenu()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <h1>Welcome to The Cozy Bean Cafe</h1>
+            <p>Warm Coffee, Delicious Bites,<br>Delivered To You.</p>
+            <a href="#menu" class="btn-gold hero-btn">ORDER NOW</a>
+        </div>
+    </section>
+
+    <!-- Popular Items Section -->
+    <section id="menu" class="menu-section">
+        <h2>OUR POPULAR ITEMS</h2>
+        <div class="menu-grid" id="menu-grid"></div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>Your Order Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: $<span id="total-price">0.00</span></h3>
+            </div>
+            <form id="order-form" onsubmit="placeOrder(event)">
+                <input type="text" id="cust-name" placeholder="Your Name" required>
+                <input type="text" id="cust-address" placeholder="Delivery Address or Table No." required>
+                <button type="submit" class="btn-gold full-btn">CONFIRM ORDER</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Contact Us</a>
+            <a href="#">FAQs</a>
+            <a href="#">Privacy</a>
+        </div>
+        <div class="socials">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-solid fa-comment"></i>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
